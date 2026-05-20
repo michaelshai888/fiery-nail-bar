@@ -1,0 +1,134 @@
+.booking { background: var(--clr-white); }
+
+.booking__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.booking__eyebrow {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  margin-bottom: 12px;
+}
+
+.booking__info h2 {
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  margin-bottom: 18px;
+}
+
+.booking__desc {
+  color: var(--clr-mid);
+  font-size: .95rem;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.booking__details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.booking__details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1.3rem;
+}
+.booking__details li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.booking__details strong {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--clr-dark);
+}
+.booking__details span:last-child {
+  font-size: .88rem;
+  color: var(--clr-mid);
+}
+
+/* Fresha card */
+.booking__card {
+  background: var(--clr-light-pink);
+  border: 1.5px solid rgba(240,59,142,.15);
+  border-radius: var(--radius);
+  padding: 44px 36px;
+  text-align: center;
+}
+
+.booking__card-icon {
+  font-size: 2.6rem;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.booking__card h3 {
+  font-size: 1.4rem;
+  color: var(--clr-dark);
+  margin-bottom: 12px;
+}
+
+.booking__card > p {
+  font-size: .9rem;
+  color: var(--clr-mid);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.booking__perks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.booking__perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+  color: var(--clr-mid);
+}
+
+.booking__perks li span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .68rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.booking__cta {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.booking__arrow { transition: transform var(--transition); }
+.booking__cta:hover .booking__arrow { transform: translateX(4px); }
+
+.booking__note {
+  font-size: .75rem;
+  color: #bbb;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 860px) {
+  .booking__inner { grid-template-columns: 1fr; gap: 48px; }
+  .booking__card { padding: 32px 24px; }
+}

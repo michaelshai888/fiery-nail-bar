@@ -1,0 +1,93 @@
+.hero {
+  position: relative;
+  min-height: 90svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  font-size: .85rem;
+  background: url('/assets/nails-that-tell-your-story/anna-keibalo-refgCopwymo-unsplash.jpg') center 70%/cover no-repeat;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 239, 244, 0.35) 0%,
+    rgba(255, 239, 244, 0.55) 100%
+  );
+}
+
+/* Prev / Next arrows */
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,.85);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-dark);
+  transition: background var(--transition);
+}
+.hero__arrow:hover { background: var(--clr-accent); }
+.hero__arrow--prev { left: 24px; }
+.hero__arrow--next { right: 24px; }
+
+/* Content */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--clr-dark);
+  padding: 80px 24px;
+  max-width: 680px;
+}
+
+.hero__eyebrow {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--clr-dark);
+  margin-bottom: 14px;
+  text-shadow: none;
+}
+.hero__title em {
+  font-style: italic;
+  color: var(--clr-primary);
+}
+
+.hero__sub {
+  font-size: 1.05rem;
+  color: var(--clr-mid);
+  font-weight: 300;
+  margin-bottom: 36px;
+  letter-spacing: .04em;
+}
+
+.hero__cta { font-size: .85rem; }
+
+@media (max-width: 600px) {
+  .hero__arrow { display: none; }
+}

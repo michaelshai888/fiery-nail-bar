@@ -1,0 +1,152 @@
+.team { background: var(--clr-white); }
+
+.team__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team__eyebrow {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  margin-bottom: 10px;
+}
+
+.team__header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.team__subheading {
+  font-size: 1.05rem;
+  color: var(--clr-mid);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Two-column artist grid */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.team-card {
+  background: var(--clr-light-pink);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Image wrapper */
+.team-card__img-wrap {
+  position: relative;
+}
+
+.team-card__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: blur(0.4px) brightness(1.02);
+}
+
+/* Placeholder when no photo available */
+.team-card__img--placeholder {
+  background: linear-gradient(160deg, #FEEEF6 0%, #F03B8E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card__initials {
+  font-family: var(--ff-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.6);
+  letter-spacing: .04em;
+  user-select: none;
+}
+
+/* Badge pinned at the bottom of the image */
+.team-card__badge {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  background: var(--clr-dark);
+  color: var(--clr-white);
+  font-family: var(--ff-body);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+/* Body */
+.team-card__body {
+  padding: 28px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.team-card__name {
+  font-family: var(--ff-heading);
+  font-size: 1.55rem;
+  color: var(--clr-dark);
+  line-height: 1.2;
+}
+
+.team-card__specialties {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.team-card__tag {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--clr-primary-dark);
+  background: rgba(240, 59, 142, .1);
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+
+.team-card__bio {
+  font-size: .95rem;
+  color: var(--clr-mid);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.team-card__ig {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  letter-spacing: .04em;
+  align-self: flex-start;
+  transition: opacity var(--transition);
+}
+.team-card__ig:hover { opacity: .7; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team__grid { grid-template-columns: 1fr; gap: 28px; }
+}

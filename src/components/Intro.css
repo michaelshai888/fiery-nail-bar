@@ -1,0 +1,53 @@
+.intro {
+  background: #ffeff4;
+  padding: 96px 0 112px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* Rotating circle stamp */
+.intro__stamp-svg {
+  position: absolute;
+  top: 32px;
+  right: calc(50% - 560px);
+  width: 110px;
+  height: 110px;
+  color: var(--clr-primary);
+  animation: spin 16s linear infinite;
+  opacity: .85;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.intro__content { max-width: 680px; margin: 0 auto; }
+
+.intro__heading {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: var(--clr-dark);
+  line-height: 1.35;
+  margin-bottom: 24px;
+}
+
+.intro__body {
+  font-size: 1rem;
+  color: var(--clr-mid);
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+
+@media (max-width: 1000px) {
+  .intro__stamp-svg { right: 16px; top: 20px; width: 80px; height: 80px; }
+}
+@media (max-width: 600px) {
+  .intro__stamp-svg { display: none; }
+}
+
+/* Match scallop bumps to the section background */
+.intro.scallop-bottom::after {
+  background: radial-gradient(circle at 25px 0, #ffeff4 25px, transparent 26px),
+              radial-gradient(circle at 75px 0, #ffeff4 25px, transparent 26px);
+  background-size: 100px 32px;
+}
