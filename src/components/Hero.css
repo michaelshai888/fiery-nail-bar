@@ -7,11 +7,34 @@
   overflow: hidden;
 }
 
-.hero__bg {
+.hero__scroll-bg {
   position: absolute;
   inset: 0;
-  font-size: .85rem;
-  background: url('/assets/nails-that-tell-your-story/anna-keibalo-refgCopwymo-unsplash.jpg') center 70%/cover no-repeat;
+  overflow: hidden;
+}
+
+.hero__scroll-track {
+  display: flex;
+  height: 100%;
+  animation: heroScroll 35s linear infinite;
+  will-change: transform;
+}
+
+.hero__scroll-item {
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.hero__scroll-img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes heroScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .hero__overlay {

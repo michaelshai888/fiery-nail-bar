@@ -64,6 +64,7 @@ h1,h2,h3,h4 { font-family: var(--ff-heading); line-height: 1.2; }
 }
 .btn-pink        { background: var(--clr-primary);  color: var(--clr-white); }
 .btn-pink:hover  { background: var(--clr-primary-dark); transform: translateY(-2px); }
+.btn-pink:active { background: var(--clr-primary-dark); transform: translateY(0); }
 .btn-accent      { background: var(--clr-accent);   color: var(--clr-dark); }
 .btn-accent:hover{ background: var(--clr-accent-dark); transform: translateY(-2px); }
 .btn-outline     { background: transparent; border-color: var(--clr-dark); color: var(--clr-dark); }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Marquee from '../components/Marquee'
 import './FAQ.css'
@@ -50,7 +51,7 @@ export default function FAQ() {
       </header>
       <main className="faq-page">
         <div className="container faq-page__inner">
-          <a href="/" className="faq-page__back">&#8592; Back to Home</a>
+          <Link to="/" className="faq-page__back">&#8592; Back to Home</Link>
           <h1 className="faq-page__heading">
             Frequently Asked{' '}
             <em className="text-pink" style={{ fontStyle: 'italic' }}>Questions</em>

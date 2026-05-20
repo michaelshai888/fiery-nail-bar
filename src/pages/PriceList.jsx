@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Marquee from '../components/Marquee'
+import { asset } from '../utils/asset'
 import './PriceList.css'
 
 export default function PriceList() {
@@ -19,7 +20,7 @@ export default function PriceList() {
             Our <em className="text-pink" style={{ fontStyle: 'italic' }}>Price List</em>
           </h1>
           <img
-            src="/assets/pricelist.png"
+            src={asset('/assets/pricelist.png')}
             alt="Fiery Nailbar Price List"
             className="pricelist-page__img"
           />

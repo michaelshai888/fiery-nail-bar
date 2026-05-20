@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { asset } from '../utils/asset'
 import './Navbar.css'
 
 const LEFT_LINKS  = [
@@ -39,7 +40,7 @@ export default function Navbar() {
 
         {/* Centered logo */}
         <Link to="/" className="navbar__logo">
-          <img src="/assets/logo/IMG_6339.jpg" alt="Fiery Nailbar" className="navbar__logo-img" />
+          <img src={asset('/assets/logo/IMG_6339.jpg')} alt="Fiery Nailbar" className="navbar__logo-img" />
         </Link>
 
         {/* Right links + CTA */}

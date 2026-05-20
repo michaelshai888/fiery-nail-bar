@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const COLS = {
@@ -63,7 +64,11 @@ export default function Footer() {
             <h4>{heading}</h4>
             <ul>
               {items.map(({ label, href }) => (
-                <li key={label}><a href={href}>{label}</a></li>
+                <li key={label}>
+                  {href.startsWith('/') && !href.startsWith('/#')
+                    ? <Link to={href}>{label}</Link>
+                    : <a href={href}>{label}</a>}
+                </li>
               ))}
             </ul>
           </div>

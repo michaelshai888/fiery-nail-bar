@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Marquee from '../components/Marquee'
 import './CancellationPolicy.css'
@@ -42,7 +43,7 @@ export default function CancellationPolicy() {
       </header>
       <main className="cancel-page">
         <div className="container cancel-page__inner">
-          <a href="/" className="cancel-page__back">&#8592; Back to Home</a>
+          <Link to="/" className="cancel-page__back">&#8592; Back to Home</Link>
           <h1 className="cancel-page__heading">
             Cancellation{' '}
             <em className="text-pink" style={{ fontStyle: 'italic' }}>Policy</em>

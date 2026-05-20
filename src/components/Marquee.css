@@ -8,7 +8,7 @@
 .marquee__track {
   display: inline-flex;
   gap: 0;
-  animation: marqueeScroll 60s linear infinite;
+  animation: marqueeScroll 90s linear infinite;
 }
 
 .marquee:hover .marquee__track {

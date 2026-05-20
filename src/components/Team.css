@@ -60,7 +60,6 @@
   object-fit: cover;
   object-position: top center;
   display: block;
-  filter: blur(0.4px) brightness(1.02);
 }
 
 /* Placeholder when no photo available */

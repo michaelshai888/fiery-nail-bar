@@ -23,7 +23,6 @@
   overflow: hidden;
   object-fit: cover;
   display: block;
-  filter: blur(0.4px) brightness(1.02);
 }
 
 .about__img-small {

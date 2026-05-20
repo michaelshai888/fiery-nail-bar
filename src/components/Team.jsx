@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 import './Team.css'
 
 const ARTISTS = [
@@ -5,7 +6,7 @@ const ARTISTS = [
     id: 'zara',
     name: 'Keiren Faurie',
     title: 'Head Nail Artist and Owner',
-    photo: '/assets/meet-your-artists/_MG_0804.JPG',
+    photo: asset('/assets/meet-your-artists/_MG_0804.JPG'),
     specialties: ['Gel Nails', 'French Tips', 'Acrylics'],
     bio: 'With over 7 years of experience, Keiren brings precision and elegance to every set. Known for her flawless gel application and immaculate French tips, she has built a loyal clientele who trust her for clean, classic and long-lasting results.',
     ig: 'https://www.instagram.com/fiery_nailbar',
