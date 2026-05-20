@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpeg" href="/fiery-nail-bar/assets/logo/favicon.jpg" />
     <link rel="apple-touch-icon" href="/fiery-nail-bar/assets/logo/favicon.jpg" />
+    <script>
+      // Restore path from GitHub Pages 404 redirect
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded[0] + (decoded[1] || '') + l.hash
+          );
+        }
+      }(window.location));
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fiery Nailbar | Nail Studio in Johannesburg</title>
     <meta name="description" content="Fiery Nailbar is a premium nail studio in Sydenham, Johannesburg. Specialising in gel overlays, builder gel sculpted tips, nail art, and pedicures. Book online via Fresha." />
