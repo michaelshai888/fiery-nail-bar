@@ -21,7 +21,7 @@ export default function Booking() {
           <ul className="booking__details">
             <li>
               <span>📍</span>
-              <div><strong>Location</strong><span>47 Carrisbrook Street, Sydenham, Johannesburg</span></div>
+              <div><strong>Location</strong><span>47 Carisbrook Street, Sydenham, Johannesburg</span></div>
             </li>
             <li>
               <span>🕐</span>

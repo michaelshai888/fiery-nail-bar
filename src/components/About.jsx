@@ -8,12 +8,12 @@ export default function About() {
         {/* Blob image */}
         <div className="about__img-wrap">
           <img
-            src={asset('/assets/meet-your-artists/_MG_0804.JPG')}
+            src={asset('/assets/IMG_0968.JPG')}
             alt="Nail technician at work in the salon"
             className="about__blob"
           />
           <img
-            src={asset('/assets/events/eab3c8bb-f2c6-4abb-8981-78e7f40aaeea-2.JPG')}
+            src={asset('/assets/IMG_1265.JPG')}
             alt="Fiery Nailbar salon"
             className="about__img-small"
           />

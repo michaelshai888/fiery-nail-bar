@@ -2,9 +2,17 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Marquee from '../components/Marquee'
 import { asset } from '../utils/asset'
+import { useSeo } from '../utils/useSeo'
 import './PriceList.css'
 
 export default function PriceList() {
+  useSeo({
+    title: 'Price List | Fiery Nailbar Johannesburg',
+    description:
+      'View the full price list for Fiery Nailbar — gel overlays, builder gel sculpted tips, rubber base, nail art, and pedicures in Sydenham, Johannesburg.',
+    path: '/pricelist',
+  })
+
   return (
     <>
       <header className="site-header">
@@ -13,9 +21,9 @@ export default function PriceList() {
       </header>
       <main className="pricelist-page">
         <div className="container pricelist-page__inner">
-          <a href="/#services" className="pricelist-page__back">
+          <Link to="/" className="pricelist-page__back">
             &#8592; Back to Home
-          </a>
+          </Link>
           <h1 className="pricelist-page__heading">
             Our <em className="text-pink" style={{ fontStyle: 'italic' }}>Price List</em>
           </h1>
@@ -24,9 +32,9 @@ export default function PriceList() {
             alt="Fiery Nailbar Price List"
             className="pricelist-page__img"
           />
-          <a href="/#booking" className="btn btn-pink pricelist-page__cta">
+          <Link to="/" className="btn btn-pink pricelist-page__cta">
             Book Now
-          </a>
+          </Link>
         </div>
       </main>
     </>

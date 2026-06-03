@@ -10,9 +10,12 @@ import About          from './components/About'
 import Testimonials   from './components/Testimonials'
 import Booking        from './components/Booking'
 import Footer         from './components/Footer'
+import { useSeo }      from './utils/useSeo'
 import './App.css'
 
 export default function App() {
+  useSeo({ path: '/' })
+
   return (
     <>
       <header className="site-header">

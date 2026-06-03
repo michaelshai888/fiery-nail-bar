@@ -1,26 +1,58 @@
+import { useEffect, useRef } from 'react'
 import { asset } from '../utils/asset'
 import './Hero.css'
 
 const HERO_PHOTOS = [
-  asset('/assets/portfolio/FullSizeRender.jpeg'),
-  asset('/assets/portfolio/IMG_1794.jpeg'),
-  asset('/assets/portfolio/IMG_2166.jpeg'),
-  asset('/assets/portfolio/IMG_2812.jpeg'),
-  asset('/assets/portfolio/IMG_3020.jpeg'),
-  asset('/assets/portfolio/IMG_3610.jpeg'),
-  asset('/assets/portfolio/IMG_5336.jpeg'),
-  asset('/assets/portfolio/IMG_5820.jpeg'),
-  asset('/assets/portfolio/IMG_6615.jpeg'),
-  asset('/assets/portfolio/IMG_7338.jpeg'),
-  asset('/assets/portfolio/IMG_7718.jpeg'),
-  asset('/assets/portfolio/IMG_8242.jpeg'),
+  asset('/assets/portfolio/Keiren/FullSizeRender.jpeg'),
+  asset('/assets/portfolio/Keiren/FullSizeRender%20(1).jpeg'),
+  asset('/assets/portfolio/Keiren/FullSizeRender%20(2).jpeg'),
+  asset('/assets/portfolio/Keiren/FullSizeRender%202.jpeg'),
+  asset('/assets/portfolio/Keiren/IMG_1794.jpeg'),
 ]
 
 export default function Hero() {
+  const trackRef = useRef(null)
+  const animRef = useRef(null)
+  const posRef = useRef(0)
+  const lastTimeRef = useRef(null)
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+
+    const speed = window.innerWidth <= 600 ? 28 : 16 // px/s
+
+    const step = (time) => {
+      if (lastTimeRef.current !== null) {
+        const delta = time - lastTimeRef.current
+        posRef.current += (speed * delta) / 1000
+        const halfWidth = track.scrollWidth / 2
+        if (halfWidth > 0 && posRef.current >= halfWidth) {
+          posRef.current -= halfWidth
+        }
+        track.style.transform = `translateX(-${posRef.current}px) translateZ(0)`
+      }
+      lastTimeRef.current = time
+      animRef.current = requestAnimationFrame(step)
+    }
+
+    animRef.current = requestAnimationFrame(step)
+
+    const handleVisibility = () => {
+      if (document.hidden) lastTimeRef.current = null
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+
+    return () => {
+      cancelAnimationFrame(animRef.current)
+      document.removeEventListener('visibilitychange', handleVisibility)
+    }
+  }, [])
+
   return (
     <section id="hero" className="hero">
       <div className="hero__scroll-bg" aria-hidden="true">
-        <div className="hero__scroll-track">
+        <div className="hero__scroll-track" ref={trackRef}>
           {[...HERO_PHOTOS, ...HERO_PHOTOS].map((src, i) => (
             <div key={i} className="hero__scroll-item">
               <img src={src} alt="" className="hero__scroll-img" />

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Marquee from '../components/Marquee'
+import { useSeo } from '../utils/useSeo'
 import './FAQ.css'
 
 const FAQS = [
@@ -34,7 +35,7 @@ const FAQS = [
   },
   {
     q: 'Where are you located?',
-    a: '47 Carrisbrook Street, Sydenham, Johannesburg. Free street parking is available nearby.',
+    a: '47 Carcarisbrookisbrook Street, Sydenham, Johannesburg. Free street parking is available nearby.',
   },
   {
     q: 'What are your trading hours?',
@@ -42,9 +43,30 @@ const FAQS = [
   },
 ]
 
+const FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
 export default function FAQ() {
+  useSeo({
+    title: 'FAQ | Fiery Nailbar Johannesburg',
+    description:
+      'Answers to common questions about Fiery Nailbar — booking, service times, how long gel nails last, removals, location, and trading hours in Sydenham, Johannesburg.',
+    path: '/faq',
+  })
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <header className="site-header">
         <Navbar />
         <Marquee />

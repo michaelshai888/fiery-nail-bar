@@ -9,7 +9,7 @@ import CancellationPolicy from './pages/CancellationPolicy.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/fiery-nail-bar">
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/pricelist" element={<PriceList />} />

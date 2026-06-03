@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Marquee from '../components/Marquee'
+import { useSeo } from '../utils/useSeo'
 import './CancellationPolicy.css'
 
 const SECTIONS = [
@@ -35,6 +36,13 @@ const SECTIONS = [
 ]
 
 export default function CancellationPolicy() {
+  useSeo({
+    title: 'Cancellation Policy | Fiery Nailbar Johannesburg',
+    description:
+      'Read the Fiery Nailbar cancellation, rescheduling, and no-show policy. We ask for at least 24 hours’ notice to cancel or reschedule your appointment.',
+    path: '/cancellation-policy',
+  })
+
   return (
     <>
       <header className="site-header">
