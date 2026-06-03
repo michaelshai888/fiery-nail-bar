@@ -12,7 +12,7 @@ const REVIEWS = [
     name: 'Leah B',
     initials: 'LB',
     stars: 5,
-    service: "Couldn't recommend highly enough! Always",
+    service: 'Gel Nails',
     text: "Couldn't recommend highly enough! Always thrilled with my nails",
   },
   {
