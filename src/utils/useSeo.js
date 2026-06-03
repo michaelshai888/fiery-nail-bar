@@ -25,12 +25,40 @@ function setCanonical(href) {
   el.setAttribute('href', href)
 }
 
+const BREADCRUMB_ID = 'seo-breadcrumb-jsonld'
+
+// Injects (or removes) a BreadcrumbList JSON-LD block for the current route so
+// search results can show a Home › Page trail. `title` is the current page.
+function setBreadcrumb(title, path) {
+  const existing = document.getElementById(BREADCRUMB_ID)
+  if (!path) {
+    if (existing) existing.remove()
+    return
+  }
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: title, item: `${SITE_URL}${path}` },
+    ],
+  }
+  const el = existing || document.createElement('script')
+  el.id = BREADCRUMB_ID
+  el.type = 'application/ld+json'
+  el.textContent = JSON.stringify(data)
+  if (!existing) document.head.appendChild(el)
+}
+
 /**
- * Updates the document title, description, canonical URL, and the social
- * sharing tags for the current SPA route. Restores defaults on unmount so
- * navigating back to the home page keeps the correct metadata.
+ * Updates the document title, description, canonical URL, the social sharing
+ * tags, and a breadcrumb JSON-LD for the current SPA route. Restores defaults
+ * on unmount so navigating back to the home page keeps the correct metadata.
+ *
+ * @param {string} [breadcrumbName] Short label for the page in the breadcrumb
+ *   trail (e.g. "FAQ"). Omit on the home route to skip breadcrumbs.
  */
-export function useSeo({ title, description, path = '' } = {}) {
+export function useSeo({ title, description, path = '', breadcrumbName } = {}) {
   useEffect(() => {
     const resolvedTitle = title || DEFAULT_TITLE
     const resolvedDescription = description || DEFAULT_DESCRIPTION
@@ -44,8 +72,10 @@ export function useSeo({ title, description, path = '' } = {}) {
     setMeta('meta[property="og:url"]', 'property', 'og:url', resolvedUrl)
     setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', resolvedTitle)
     setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', resolvedDescription)
+    setBreadcrumb(breadcrumbName, breadcrumbName ? path : '')
 
     return () => {
+      setBreadcrumb(null, '')
       document.title = DEFAULT_TITLE
       setMeta('meta[name="description"]', 'name', 'description', DEFAULT_DESCRIPTION)
       setCanonical(`${SITE_URL}/`)
@@ -55,5 +85,5 @@ export function useSeo({ title, description, path = '' } = {}) {
       setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', DEFAULT_TITLE)
       setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', DEFAULT_DESCRIPTION)
     }
-  }, [title, description, path])
+  }, [title, description, path, breadcrumbName])
 }

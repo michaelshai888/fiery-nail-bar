@@ -88,9 +88,14 @@ function ArtistGallery({ artist }) {
       </div>
 
       <div className="portfolio__grid--3col">
-        {artist.items.map(({ id, src }) => (
+        {artist.items.map(({ id, src }, i) => (
           <div key={id} className="pf-item">
-            <img src={src} alt="" className="pf-item__img" loading="lazy" />
+            <img
+              src={src}
+              alt={`Nail art by ${artist.name} at Fiery Nailbar, Johannesburg — design ${i + 1}`}
+              className="pf-item__img"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>

@@ -11,6 +11,7 @@ export default function PriceList() {
     description:
       'View the full price list for Fiery Nailbar — gel overlays, builder gel sculpted tips, rubber base, nail art, and pedicures in Sydenham, Johannesburg.',
     path: '/pricelist',
+    breadcrumbName: 'Price List',
   })
 
   return (

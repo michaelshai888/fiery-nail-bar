@@ -44,7 +44,7 @@ export default function Team() {
                 {artist.photo ? (
                   <img
                     src={artist.photo}
-                    alt={`Photo of ${artist.name}`}
+                    alt={`${artist.name}, ${artist.title} at Fiery Nailbar in Johannesburg`}
                     className="team-card__img"
                   />
                 ) : (

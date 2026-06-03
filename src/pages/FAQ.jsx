@@ -59,6 +59,7 @@ export default function FAQ() {
     description:
       'Answers to common questions about Fiery Nailbar — booking, service times, how long gel nails last, removals, location, and trading hours in Sydenham, Johannesburg.',
     path: '/faq',
+    breadcrumbName: 'FAQ',
   })
 
   return (

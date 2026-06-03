@@ -6,7 +6,7 @@ const EVENTS = [
     id: 4,
     title: 'Converse Activation',
     tag: 'Brand Activation',
-    src: asset('/assets/events/converse.PNG'),
+    src: asset('/assets/events/converse.jpeg'),
     description: 'Brought Fiery\'s signature nail artistry to a Converse brand activation, complementing the brand\'s creative, street-culture energy with bold nail designs.',
   },
   {
