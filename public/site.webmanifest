@@ -1,0 +1,17 @@
+{
+  "name": "Fiery Nailbar",
+  "short_name": "Fiery Nailbar",
+  "description": "Premium nail studio in Sydenham, Johannesburg — gel overlays, builder gel, nail art, and pedicures.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/assets/logo/favicon.jpg",
+      "sizes": "248x371",
+      "type": "image/jpeg"
+    }
+  ]
+}
